@@ -22,7 +22,7 @@ const app = Vue.createApp({
         })
     },
     getData(){
-      axios.get(`${this.url}}/api/${this.path}/products/all`)
+      axios.get(`${this.url}}/api/${this.path}/admin/products/all`)
         .then(res=>{
           this.products = res.data.products;
         })
