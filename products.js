@@ -1,11 +1,9 @@
-const { createApp } = Vue;
-
-const app = createApp({
+const app = Vue.createApp({
   data(){
     return {
       // config 設定
-      apiUrl: 'https://vue3-course-api.hexschool.io/v2',
-      api_path: 'vue-week2',
+      url: 'https://vue3-course-api.hexschool.io/v2',
+      path: 'vue-week2',
       // 產品資料格式
       products: [],
       // 點擊事件的產品obj
@@ -14,25 +12,22 @@ const app = createApp({
   },
   methods: {
     checkLogin(){
-      const url = `${this.apiUrl}/api/user/check`;
-      axios.post(url)
+      axios.post(`${this.url}/api/user/check`)
         .then(() => {
           this.getData();
         })
-        .catch((err) => {
-          alert(err.response.data.message);
+        .catch(() => {
+          alert('登入失敗');
           window.location = 'index.html';
         })
     },
     getData(){
-      const url = `${this.apiUrl}}/api/${this.api_path}/products/all`;
-      axios.get(url)
+      axios.get(`${this.url}}/api/${this.path}/products/all`)
         .then(res=>{
           this.products = res.data.products;
         })
         .catch((err) => {
           alert(err.response.data.message);
-          console.log(err);
         })
     }
   },

@@ -1,11 +1,9 @@
-const { createApp } = Vue;
-
-const app = createApp({
+const app = Vue.createApp({
     data(){
         return{
             // config 設定
-            apiUrl: 'https://vue3-course-api.hexschool.io/v2',
-            api_path: 'vue-week2',
+            url: 'https://vue3-course-api.hexschool.io/v2',
+            path: 'vue-week2',
             // axios login api: headers
             user: {
                 username: '',
@@ -16,9 +14,8 @@ const app = createApp({
     methods: {
         // 登入功能 login
         login(){
-            const url =`${this.apiUrl}/admin/signin`;
             axios
-                .post(url, this.user)
+                .post(`${this.url}/admin/signin`, this.user)
                 .then(res=>{
                     // #2-1 將 token 和 unix timstamp 存起來
                     const { token, expired} = res.data;
