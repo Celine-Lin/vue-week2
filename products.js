@@ -3,7 +3,7 @@ const app = Vue.createApp({
     return {
       // config 設定
       url: 'https://vue3-course-api.hexschool.io/v2',
-      path: 'vue-week2',
+      path: 'vue-week2-new',
       // 產品資料格式
       products: [],
       // 點擊事件的產品obj
@@ -22,7 +22,7 @@ const app = Vue.createApp({
         })
     },
     getData(){
-      axios.get(`${this.url}}/api/${this.path}/admin/products`)
+      axios.get(`${this.url}/api/${this.path}/admin/products`)
         .then(res=>{
           this.products = res.data.products;
         })

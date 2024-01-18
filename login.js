@@ -3,7 +3,7 @@ const app = Vue.createApp({
         return{
             // config 設定
             url: 'https://vue3-course-api.hexschool.io/v2',
-            path: 'vue-week2',
+            path: 'vue-week2-new',
             // axios login api: headers
             user: {
                 username: '',
