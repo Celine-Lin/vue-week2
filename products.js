@@ -29,6 +29,9 @@ const app = Vue.createApp({
         .catch((err) => {
           alert(err.response.data.message);
         })
+    },
+    openProduct(item){
+      this.temp = item;
     }
   },
   mounted(){
