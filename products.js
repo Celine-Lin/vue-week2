@@ -33,7 +33,7 @@ const app = Vue.createApp({
   },
   mounted(){
     // 取得 Token（Token 僅需要設定一次）
-    const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
+    const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexVueToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
     // 預設把 token 加入 headers 裡
     axios.defaults.headers.common['Authorization'] = token;
     // 預設驗證登入
